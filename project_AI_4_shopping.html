@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Freedom from Tobacco 🚬</title>
+    <link rel = "stylesheet" href = "style_DA.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="Index.html#header">Home</a></li>
+                <li><a href="Index.html#aboutMe">About</a></li>
+                <li><a href="Index.html#AI">Data Science Projects</a></li>
+                <li><a href="Index.html#DA">DA & Consulting Projects</a></li>
+                <li><a href="Index.html#interest_new">Interest</a></li>
+                <li><a href="Index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>Freedom from Tobacco 🚬</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation" align = 'justify'>
+                This is a game I developed using the <span>Python library, Pygame</span>. 
+                The inspiration behind it comes from a close friend of mine, Angela, who smokes despite my earnest advice against it. 
+                So, I decided to create this game as a reminder of the dangers of smoking and encourage her to quit. However, it did not work.
+            </p>
+        </div>
+        <div class="Information">
+            <div>
+                <ul>
+                    <li><span>The game consists of three levels, representing the number of cigarettes she smokes in a week (actual gameplay difficulty is determined by the speed of moving obstacles)</span></li>
+                    <li><span>The score is calculated based on her expected lifespan</span></li>
+                    <li><span>Each time she plays, if she collides with an obstacle, she will have to restart</span></li>
+                    <li><span>The target score for each level is 57 (the same as my friend's academic achievement score). Once the score reaches 57, a video about cancer cell mutation will be shown as a warning</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class = "project_demonstration">
+        <video  width="100%" height="600px" controls>
+            <source src="DS/Smoke_game.mp4" type="video/mp4">
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-brands fa-python"></i>
+            <h2>Python</h2>
+            <ul>
+                <li><span>By playing this game, I have become more proficient in Python syntax and have a better understanding
+                    of the applications regarding the utilization of loops and functions.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-gamepad"></i>
+            <h2>Video Game Design</h2>
+            <ul>
+                <li><span>I have gained a deep understanding of the fundamental principles and logic involved in creating a video game.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-sharp fa-regular fa-gears"></i>
+            <h2>Logic Training</h2>
+            <ul>
+                <li><span>Designing different levels and events that trigger various actions 
+                    for the player has significantly enhanced my logical thinking abilities.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>TMBA – USDX (U.S. Dollar Index)</title>
+    <link rel = "stylesheet" href = "style_DA.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="Index.html#header">Home</a></li>
+                <li><a href="Index.html#aboutMe">About</a></li>
+                <li><a href="Index.html#AI">Data Science Projects</a></li>
+                <li><a href="Index.html#DA">DA & Consulting Projects</a></li>
+                <li><a href="Index.html#interest_new">Interest</a></li>
+                <li><a href="Index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>TMBA – USDX (U.S. Dollar Index)</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation" align = 'justify'>
+                <span>REITs (Real Estate Investment Trusts)</span> are investment vehicles that own and operate income-generating real estate properties, 
+                providing individuals with a way to invest in real estate without direct ownership. 
+                They generate income through rentals and property appreciation, distributing earnings as dividends to shareholders while offering 
+                diversification and potential long-term capital appreciation.
+            </p>
+        </div>
+        <div class="Information" style = "margin-bottom: 80px;">
+            <div>
+                <h2>My Contribution</h2>
+                <br>
+                <br>
+                <ul>
+                    <li><span>Did research on USDX, including the economic fundamentals of different countries, 
+                        currency policies, and analyzing interest rate hike forecasts in the U.S. and Europe</span></li>
+                    <li><span>In terms of fundamentals analysis, the primary focus was on European inflation, energy (natural gas), and consumer confidence levels</span></li>
+                    <li><span>Generated professional investment reports and presented the findings to the directors</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class = "project_demonstration" style="background: #FAFAFA;">
+        <h1>Final <br>Presentation</h1>
+        <embed src="DA_pdf/USDX.pdf" width="100%" height="600px" style = "margin-bottom: 100px;"/>
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-light fa-circle-info"></i>
+            <h2>Information Research</h2>
+            <ul>
+                <li><span>This project taught me effective data sourcing, 
+                    where to find accurate and comprehensive datasets, and how to present them clearly.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-light fa-money-bill-transfer"></i>
+            <h2>Macroeconomics Knowledge</h2>
+            <ul>
+                <li><span>
+                    Studying the USDX, I learned how the currency policies and fundamentals of influential countries impact its fluctuations, 
+                    with consumer attitudes towards new policies being particularly important in currency policy.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-light fa-money-check-dollar-pen"></i>
+            <h2>Financial Story Telling</h2>
+            <ul>
+                <li><span>
+                    Through this project, I've learned to convey content rich in DA-related expertise to a non-specialized audience using a simplified and logical narrative approach, 
+                    making it understandable even to those without a financial background.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>

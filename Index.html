@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Personal Portfolio Website - Caslow Chien</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="shortcut icon" type="x-icon" href="icon.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id = "sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#aboutMe">About</a></li>
+                <li><a href="#AI">AI Projects</a></li>
+                <li><a href="#DE">Data Engineer Projects</a></li>
+                <li><a href="#DA">Data Analysis Projects</a></li>
+                <li><a href="#interest_new">Interest</a></li>
+                <li><a href="#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h1>Hi, I'm <span>Caslow</span> from <br>Boston University</h1>
+            <div class = 'text-wrapper'>
+                <div class="box b1">Master in Data Science</div>
+                <div class="box b2">Bachelor in Physics, National Taiwan University</div>
+                <div class="box b3">Exchange Student, Australian National University</div>
+                <div class="box b4">Mandarin | English</div>
+            </div>
+        </div>
+        <div class = 'moreButton'>
+            <a href="#aboutMe">
+                <button type="button">Explore more</button>  
+            </a> 
+        </div>
+    </div>
+</div>
+<!-- -----about_new---------------------------------------------------------------------------- -->
+<div id = 'aboutMe'>
+    <div class = 'container'>
+        <h1 class = 'sub-title'>About Me</h1>
+        <p class = 'self-intro'>
+            Hi! I'm Caslow Chien, a data science enthusiast currently pursuing my Master's in Data Science at Boston University. I'm passionate about turning data into insights, having developed innovative projects like a recommendation system for online shopping and a neural network for disaster reduction. When I'm not diving into data, you can catch me dancing or leading events—let's connect!
+        </p>
+        <br>
+        <div class = 'selection-bar'>
+            <button class = 'about-type active-type' onclick="opentab('skills')">
+                <p class = "type-name">Skills</p>
+            </button>
+            <button class = 'about-type' onclick = "opentab('experience')">
+                <p class = "type-name">Experience</p>
+            </button>
+            <button class = 'about-type' onclick = "opentab('contests')">
+                <p class = "type-name">Contests</p>
+            </button>
+            <button class = 'about-type' onclick = "opentab('education')">
+                <p class = "type-name">Education</p>
+            </button>
+        </div>
+        <div class = 'about-content'>
+            <!-- Skills -->
+            <div class="tab-content active-tab" id = "skills">
+                <div class = 'about-box-skill'>
+                    <h3>Machine Learning</h3>
+                    <div class = 'content-block'>
+                        <div class = 'tools'>
+                            <img src="images/tools/git.png" width="100">
+                        </div>    
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/python.png" width="100">
+                        </div>   
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/pytorch.png" width="100">
+                        </div> 
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/tensorflow.png" width="120">
+                        </div>   
+                    </div>                   
+                </div>
+                <div class = 'about-box-skill'>
+                    <h3>Data Analysis</h3>
+                    <div class = 'content-block'>
+                        <div class = 'tools'>
+                            <img src="images/tools/pandas.png" width = '100'>                    
+                        </div>    
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/tableau.png" width = '100'>
+                        </div>   
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/R.png" width = '100'>
+                        </div> 
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/excel.png" width = '100'>
+                        </div>   
+                    </div>
+                </div>
+                <div class = 'about-box-skill'>
+                    <h3>Data Engineering</h3>
+                    <div class = 'content-block'>
+                        <div class = 'tools'>
+                            <img src="images/tools/php.png" width = '100'>
+                        </div>    
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/SQL.png" width = '100'>
+                        </div>   
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/azure.png" width = '100'>
+                        </div>    
+                    </div>                  
+                </div>
+                <div class = 'about-box-skill'>
+                    <h3>Web Design</h3>
+                    <div class = 'content-block'>
+                        <div class = 'tools'>
+                            <img src="images/tools/html.png" width = '100'>
+                        </div>    
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/css.jpg" width = '100'>
+                        </div>   
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/js.png" width = '100'>
+                        </div>   
+                        <div class="vl"></div>
+                        <div class = 'tools'>
+                            <img src="images/tools/streamlit.png" width = '100'>
+                        </div>   
+                    </div>                  
+                </div>
+            </div>
+            <!-- Experience -->
+            <div class="tab-content" id = "experience">
+                <div class = 'about-box-experience'>
+                    <div class = 'insidebox-ex'> 
+                        <img src="images/tools/ncdr.png" width = '150px'>
+                        <div class = 'content-ex'>
+                            <p>National Science and Technology Center (Taiwan)</p>
+                            <h3>Data Science Contractor</h3>
+                            <p>Jan 2024 - May 2024</p>
+                        </div>
+                    </div>
+                    <hr class = 'experience-line'>
+                    <div class = 'insidebox-ex'>
+                        <img src="images/tools/nstc.png" width = '150px'>
+                        <div class = 'content-ex'>
+                            <p>National Science and Technology Council (Taiwan)</p>
+                            <h3>AI Researcher</h3>
+                            <p>Jul 2023 - May 2024</p>
+                        </div>
+                    </div>
+                    <hr class = 'experience-line'>
+                    <div class = 'insidebox-ex'>
+                        <img src="images/tools/ntu.jpeg" width = '150px'>
+                        <div class = 'content-ex'>
+                            <p>Artificial Intelligence and Multimedia Laboratory, National Taiwan University</p>
+                            <h3>AI Research Assistant</h3>
+                            <p>Jul 2022 - Jul 2023</p>
+                        </div>
+                    </div>
+                    <hr class = 'experience-line'>
+                    <div class = 'insidebox-ex'>
+                        <img src="images/tools/accudata.png" width = '150px'>
+                        <div class = 'content-ex'>
+                            <p>Accudata Research Institute Inc.</p>
+                            <h3>Data Science part-time Intern</h3>
+                            <p>Mar 2023 - Jun 2023</p>
+                        </div>
+                    </div>
+                    <hr class = 'experience-line'>
+                    
+                    <div class = 'insidebox-ex'>
+                        <img src="images/tools/dac.png" width = '150px'>
+                        <div class = 'content-ex'>
+                            <p>NTU Data Analytics Club</p>
+                            <h3>Data Analysis Project Member</h3>
+                            <p>Sep 2022 - Jun 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contests -->
+            <div class="tab-content" id = "contests">
+                <div class = 'about-box-contests'>
+                    <div class = 'insidebox-intern'>
+                        <img src="images/tools/coding101.webp" width="150px">
+                        <div class = 'content-intern'>
+                            <p>Ministry of Education (Taiwan)</p>
+                            <h3>Coding 101 Contest</h3>
+                            <p>3rd place🥉</p>
+                            <p>Mar 2023</p>
+                        </div>
+                    </div>
+                    <hr class = 'intern-line'>
+                    <div class = 'insidebox-intern'>
+                        <img src="images/tools/DisasterPreventionContest.png" width="150px">
+                        <div class = 'content-intern'>
+                            <p>National Science and Technology Center for Disaster Reduction (Taiwan)</p>
+                            <h3>Data Communication of Disaster Prevention Contest</h3>
+                            <p>Best Popularity Award🏅 3rd place 🥉</p>
+                            <p>Dec 2022</p>
+                        </div>
+                    </div>
+                    <hr class = 'intern-line'>
+                    <div class = 'insidebox-intern'>
+                        <img src="images/tools/WinThePride.jpg" width="150px">
+                        <div class = 'content-intern'>
+                            <p>Science & Technology Policy Research and Information Center (Taiwan)</p>
+                            <h3>Nation Colleges Data Analysis Contest</h3>
+                            <p>Finalist🪙</p>
+                            <p>Dec 2022</p>
+                        </div>
+                    </div>
+                    <hr class = 'intern-line'>
+                    <div class = 'insidebox-intern'>
+                        <img src="images/tools/atcc.png" width="150px">
+                        <div class = 'content-intern'>
+                            <p>Atona Inc.</p>
+                            <h3>National College Business Case Contest</h3>
+                            <p>Finalist🪙</p>
+                            <p>May 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Education -->
+            <div class="tab-content" id = "education">
+                <div class = 'about-box-education'>
+                    <div class = 'insidebox-edu'>
+                        <img src="images/tools/BU.png" width = '150px'>
+                        <div class = 'content-edu'>
+                            <p>Sep 2024 - Present</p>
+                            <h3>Boston University</h3>
+                            <p>Faculty of Computing and Data Sciences<span style="margin-left: 20px; margin-right: 20px;">|</span>Master in Data Science</p>
+                        </div>                       
+                    </div>
+                    <hr class = 'intern-line'>
+                    <div class = 'insidebox-edu'>
+                        <img src="images/tools/anu.jpg" width = '150px'>   
+                        <div class = 'content-edu'>
+                            <p>Jul 2023 - Jun 2024</p>
+                            <h3>Australian National University</h3>
+                            <p>Global Program<span style="margin-left: 20px; margin-right: 20px;">|</span>One-year Exchange Student</p>
+                        </div>
+                    </div>   
+                    <hr class = 'intern-line'>
+                    <div class = 'insidebox-edu'>
+                        <img src="images/tools/ntu.jpeg" width = '150px'>   
+                        <div class = 'content-edu'>
+                            <p>Sep 2019 - Jun 2024</p>
+                            <h3>National Taiwan University</h3>
+                            <p>College of Science<span style="margin-left: 20px; margin-right: 20px;">|</span>Department of Physics</p>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- -----AI Portfolio---------------------------------------------------------------------------- -->
+<div id="AI">
+    <div class="container">
+        <h1 class = "sub-title">AI Projects</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class = 'ds-scroll'>
+            <button type="button" class="left" onclick="rightScroll_ds()">
+                <i class="fa-duotone fa-circle-chevron-left"></i>
+            </button>    
+            <div class="AI-list">
+                <div>
+                    <i class="fa-solid fa-pen-nib" style="color: #E396C1;"></i>
+                    <h2>Prediction and Web Design with Government Survey Data</h2>
+                    <hr>
+                    <div>
+                        <h3>Skill matrix</h3>
+                        <p>Machine Learning (Self-built DNN Model), Data Mining, Model Deployment, Web Design</p>
+                        <br>
+                        <h3>Tools</h3>
+                        <p>Python (Pandas, Pytorch), HTML, CSS, JavaScript</p>
+                    </div>
+                    <a href="project_AI_0_gov.html"><span>Learn more</span> ></a>
+                    <br>
+                </div>
+                <div>
+                    <i class="fa-regular fa-moped"  style="color: #96e3b8;"></i>
+                    <h2>E-scooter Market Sentiment Analysis</h2>
+                    <hr>
+                    <div>
+                        <h3>Skill matrix</h3>
+                        <p>Natural Language Process (ChatGPT API), Data Mining, Machine Learning, Front-End Development</p>
+                        <br>
+                        <h3>Tools</h3>
+                        <p>Python (Streamlit), HTML, CSS, Git</p>
+                    </div>
+                    <a href="project_AI_1_escooter.html"><span>Learn more</span> ></a>
+                    <br>
+                </div>
+                <div>
+                    <i class="fa-brands fa-twitter" style="color: #96c1e3;"></i>
+                    <h2>Stock Market Sentiment Analysis with Twitter</h2>
+                    <hr>
+                    <div>
+                        <h3>Skill matrix</h3>
+                        <p>Natural Language Process (RoBERTa Model), Data Mining, Machine Learning, Web Crawling</p>
+                        <br>
+                        <h3>Tools</h3>
+                        <p>Python (BeautifulSoup, Requests), Git</p>
+                    </div>
+                    <a href="project_AI_2_stock.html"><span>Learn more</span> ></a>
+                    <br>
+                </div>
+                <div>
+                    <i class="fa-solid fa-music" style="color: #a796e3;"></i>
+                    <h2>Music-Driven Dance Generation Model Fine-Tuning</h2>
+                    <hr>
+                    <div>
+                        <h3>Skill matrix</h3>
+                        <p> Machine Learning (Gaussian Diffusion Model)</p>
+                        <br>
+                        <h3>Tools</h3>
+                        <p>Python (Pytorch)</p>
+                    </div>
+                    <a href="project_AI_3_dance.html"><span>Learn more</span> ></a>
+                    <br>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cart-shopping" style="color: #D2E396;"></i>
+                    <h2>Real-Time Recommendation System for Online Shopping</h2>
+                    <hr>
+                    <div>
+                        <h3>Skill matrix</h3>
+                        <p>Machine Learning, Relational Database Management</p>
+                        <br>
+                        <h3>Tools</h3>
+                        <p>Python (Tensorflow), MySQL, Git, Auzre system</p>
+                    </div>
+                    <a href="project_AI_4_shopping.html"><span>Learn more</span> ></a>
+                    <br>
+                </div>
+                
+
+            </div>
+            <button type="button" class="right" onclick="leftScroll_ds()">
+                <i class="fa-duotone fa-circle-chevron-right"></i>
+            </button>            
+        </div>
+        <!-- <a href="#" class = "btn">See more</a> -->
+    </div>
+</div>
+
+<!-- -----Data Engineer (DE) Portfolio---------------------------------------------------------------------------- -->
+<div id = 'DE'>
+    <div class = 'container'>
+        <h1 class = 'sub-title'>Data Engineer Projects</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class = 'ds-scroll'>
+            <button type="button" class="left" onclick="rightScroll_de()">
+                <i class="fa-duotone fa-circle-chevron-left"></i>
+            </button>    
+            <div class = 'DE-list'>
+                <div class = "DE-item">
+                    <a href="project_DE_1_dcard.html">
+                        <img src="images/DE_1_dcard.png">
+                    </a>
+                    <p class = 'time'>1-month project, Programmer</p>
+                    <h3>Data Scraper and Pipeline on Social Platform</h2>
+                    <p class = 'description'>
+                        Built a data scraping pipeline for Taiwan’s largest social forum, reducing manual data collection time from 4 weeks to a few minutes.
+                    </p>
+                </div>
+                <div class = "DE-item">
+                    <a href="project_DE_2_php.html">
+                        <img src="images/DE_2_php.png">
+                    </a>
+                    <p class = 'time'>2-months project, Full-Stack Programmer & PM</p>
+                    <h3>PHP-Based Movie Database Management System</h2>
+                    <p class = 'description'>
+                        Developed a PHP-based relational database from scratch, with CSS and JavaScript to enhance user experience.
+                    </p>
+                </div>
+                <div class = "DE-item">
+                    <a href="project_DE_3_email.html">
+                        <img src="images/DE_3_email.png">
+                    </a>
+                    <p class = 'time'>3-months project, Full-Stack Programmer & PM</p>
+                    <h3>Dynamic Email Personalization GUI System with Excel Integration</h2>
+                    <p class = 'description'>
+                        Developed a Python email automation system with a GUI, sending 120 personalized emails in under five minutes using Excel integration.
+                    </p>
+                </div>
+            <button type="button" class="right" onclick="leftScroll_de()">
+                <i class="fa-duotone fa-circle-chevron-right"></i>
+            </button>            
+        </div>
+    </div>
+</div>
+
+<!-- -----Data Analysis (DA) Portfolio---------------------------------------------------------------------------- -->
+<div id = 'DA'>
+    <div class = 'container'>
+        <h1 class = 'sub-title'>Data Analysis Projects</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class = 'ds-scroll'>
+            <button type="button" class="left" onclick="rightScroll_da()">
+                <i class="fa-duotone fa-circle-chevron-left"></i>
+            </button>    
+            <div class = 'DA-list'>
+                <div class = "DA-item">
+                    <a href="project_DA_1_charger.html">
+                        <img src="images/DA_1_charger.png">
+                    </a>
+                    <p class = 'time'>2-month project, Data Analyst & Full-Stack Programmer & PM</p>
+                    <h3>Data Analysis and Prediction for EV Charging Station</h2>
+                    <p class = 'description'>
+                        Analyzed the EV market and predicted regional EV charging demand, then built a one-page website with an AI model for quick insights.
+                    </p>
+                </div>
+                <div class = "DA-item">
+                    <a href="project_DA_2_health.html">
+                        <img src="images/DA_2_health.png">
+                    </a>
+                    <p class = 'time'>1-month project, Data Analyst</p>
+                    <h3>Mental Health Trends Analysis: Taiwan Youth Focus</h2>
+                    <p class = 'description'>
+                        Analyzed mental health trends among Taiwanese youth, uncovering data correlations and insights using Tableau for impactful visualizations.
+                    </p>
+                </div>
+            </div>
+            <button type="button" class="right" onclick="leftScroll_da()">
+                <i class="fa-duotone fa-circle-chevron-right"></i>
+            </button>            
+        </div>
+    </div>
+</div>
+
+<!-- -----Interest_new---------------------------------------------------------------------------- -->
+<div>
+    <div id = 'interest_new'>
+        <h1 class = 'sub-title_new'><span>Interest </span> that reflect <br>who I am</h1>
+        <div class = 'slider'> 
+            <div class = 'slide-track'>
+                <div class = 'slide'>
+                    <img src="images/interest/dance.jpg">
+                    <h2 class="floating-text">Street Dance<br>Be sure to always in sync</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/coffee.jpg">
+                    <h2 class="floating-text">Flat White<br>One perfect brew at a time</h2>
+                </div>
+                <div class = 'slide-center'>
+                    <h2>Curiosity is<br>the essence of human existence.<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;– Gene Cernan</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/social.jpg">
+                    <h2 class="floating-text">Building Connections<br>Bring more laughter to the world</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/music.jpg">
+                    <h2 class="floating-text">Music producing<br>Creativity from every beat</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/stock.jpg">
+                    <h2 class="floating-text">Global DA<br>To learn the world better</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/dance.jpg">
+                    <h2 class="floating-text">Street Dance<br>Be sure to always in sync</h2>
+                </div>
+                <div class = 'slide-center'>
+                    <h2>Curiosity is<br>the essence of human existence.<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;– Gene Cernan</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/coffee.jpg">
+                    <h2 class="floating-text">Flat White<br>One perfect brew at a time</h2>
+                </div>
+                <div class = 'slide'>
+                    <img src="images/interest/social.jpg">
+                    <h2 class="floating-text">Building Connections<br>Bring more laughter to the world</h2>
+                </div> 
+            </div> 
+        </div>   
+        <i id="rotationButton" class="fa-sharp fa-regular rotation-icon fa-circle-play" style="color: #85868c;"></i>
+    </div>
+</div>
+
+<!-- -----Contact_new---------------------------------------------------------------------------- -->
+<div id = 'contact_info'>
+    <div class = 'container'>
+        <h1 class = 'sub-title'>Contact Me</h1>
+        <h5>Fuelled by curiosity and always ready for the next big opportunity<br>Let’s connect and create something amazing!</p>
+        <div class = 'basic_info'>
+            <p><i class="fa-regular fa-envelope"></i><br>caslowchien@gmail.com</p>
+            <p><i class="fa-regular fa-location-dot" style="color: #409CFF;"></i><br>Allston, MA 02134, United States</p>
+            <p><i class="fa-regular fa-phone"></i><br>+61 (617) 609-9499</p>
+        </div>
+        <div class = 'social_media'>
+            <div class = 'social-items'>
+                <a href="https://www.linkedin.com/in/caslow/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <p>Linkedin</p>
+            </div>
+            <div class = 'social-items'>
+                <a href="https://github.com/CaslowChien/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <p>GitHub</p>
+            </div>
+            <div class = 'social-items'>
+                <a href="https://www.instagram.com/caslow.42/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <p>instagram</p>
+            </div>
+        </div>
+        <hr class = 'contact-line'>
+        <div class = 'CV'>
+            <embed src="images/CV.pdf#view=FitH&scrollbar=0&toolbar=0&statusbar=0&messages=0&navpanes=0" style="width:80%;height:80vh"/>
+        </div>
+        <a href="images/CV.pdf" download class="button_CV">Download CV</a>
+        <hr class = 'bottom_line'>
+        <div class="copyright">
+            <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+        </div>  
+    </div>
+</div>
+
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    function opentab(tabId, tabButton) {
+        var tabContents = document.getElementsByClassName('tab-content');
+        
+        for (var i = 0; i < tabContents.length; i++) {
+            tabContents[i].classList.remove('active-tab');
+        }
+        
+        var selectedTab = document.getElementById(tabId);
+        selectedTab.classList.add('active-tab');
+        
+        // Remove active-type class from all tab buttons
+        var tabButtons = document.getElementsByClassName('about-type');
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove('active-type');
+        }
+        
+        // Add active-type class to the clicked tab button
+        tabButton.classList.add('active-type');
+    }
+</script>
+
+<script>
+    // Function: openmenu & closemenu for the sidemenu
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"; 
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    function leftScroll_ds() {
+        const left = document.querySelector(".AI-list");
+        left.scrollBy({
+            left: 600,
+            behavior: "smooth"
+        });
+    }
+
+    function rightScroll_ds() {
+        const right = document.querySelector(".AI-list");
+        right.scrollBy({
+            left: -600,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+<script>
+    function leftScroll_de() {
+        const left = document.querySelector(".DE-list");
+        left.scrollBy({
+            left: 600,
+            behavior: "smooth"
+        });
+    }
+
+    function rightScroll_de() {
+        const right = document.querySelector(".DE-list");
+        right.scrollBy({
+            left: -600,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+<script>
+    function leftScroll_da() {
+        const left = document.querySelector(".DA-list");
+        left.scrollBy({
+            left: 600,
+            behavior: "smooth"
+        });
+    }
+
+    function rightScroll_da() {
+        const right = document.querySelector(".DA-list");
+        right.scrollBy({
+            left: -600,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+
+<script>
+    window.onload= document.getElementById("focus").focus();
+    function leftScroll_int() {
+        const left = document.querySelector(".interest-list");
+        left.scrollBy({
+            left: 1000,
+            behavior: "smooth"
+        });
+    }
+
+    function rightScroll_int() {
+        const right = document.querySelector(".interest-list");
+        right.scrollBy({
+            left: -1000,
+            behavior: "smooth"
+        });
+    }
+</script>
+
+<script>
+const slider = document.querySelector('.slide-track');
+const rotationButton = document.getElementById('rotationButton');
+let isRotating = true;
+
+function toggleRotation() {
+    if (isRotating) {
+        slider.style.animationPlayState = 'paused';
+        rotationButton.classList.add('paused'); // Add a class to change icon appearance
+        rotationButton.classList.remove('fa-circle-play'); // Remove class for the existing image
+        rotationButton.classList.add('fa-circle-pause'); // Add class for the new image
+    } else {
+        slider.style.animationPlayState = 'running';
+        rotationButton.classList.remove('paused'); // Remove the class to reset icon appearance
+        rotationButton.classList.remove('fa-circle-pause'); // Remove class for the new image
+        rotationButton.classList.add('fa-circle-play'); // Add class for the existing image
+    }
+    isRotating = !isRotating;
+}
+
+rotationButton.addEventListener('click', toggleRotation);
+</script>
+
+</body>
+</html>
+
+

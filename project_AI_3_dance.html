@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Music-Driven Dance Generation Model Fine-Tuning</title>
+    <link rel = "stylesheet" href = "style_DA.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="Index.html#header">Home</a></li>
+                <li><a href="Index.html#aboutMe">About</a></li>
+                <li><a href="Index.html#AI">Data Science Projects</a></li>
+                <li><a href="Index.html#DA">DA & Consulting Projects</a></li>
+                <li><a href="Index.html#interest_new">Interest</a></li>
+                <li><a href="Index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>Music-Driven Dance Generation Model Fine-Tuning</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation" align = 'justify'>
+                This project was undertaken during my summer internship at IBM in 2023. 
+                Its primary objective was to assist IBM in creating a tool that integrates <span>ESG (Environmental, Social, and Governance)</span> with 
+                <span>generative AI</span> to streamline the <span>credit assessment process</span> within the banking industry.
+            </p>
+        </div>
+        <div class="Information" style="margin-bottom: 80px;">
+            <div>
+                <h2>My Contribution</h2>
+                <br>
+                <br>
+                <ul>
+                    <li><span>Scraping relevant publicly available ESG data from the internet</span></li>
+                    <li><span>Utilizing OpenAI's Langchain to integrate data, which can read various file formats such as JSON, PDF, CSV, and simultaneously feed different file types into the model.</span></li>
+                    <li><span>Using OpenAI's ChatGPT to analyze the scraped data and respond to credit assessment-related questions.</span></li>
+                    <li><span>Researching and testing Prompt Engineering techniques, including CoT (Conversational AI for Tasks), Few-Shot Learning, and synonym usage optimization.</span></li>.
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class = "project_demonstration" style="background: #FAFAFA;">
+        <h1>Final <br>Presentation</h1>
+        <embed src="DS/IBM_ESG Eloan Final Report.pdf" width="100%" height="600px" style="margin-bottom: 100px;"/>
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-solid fa-microchip-ai" style="color: #5DE6FF;"></i>
+            <h2>Generative AI</h2>
+            <ul>
+                <li><span>Though the incorporation of generative AI applications posed initial challenges that forced us to think critically. 
+                    This experience has deepened our understanding of the future potential and application methods within this field.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-regular fa-database"></i>
+            <h2>Data Processing</h2>
+            <ul>
+                <li><span>The complexity and vast volume of ESG-related data taught me how to better handle data and conduct more advanced analyses, 
+                    including techniques like embedding and vectorization, to extract meaningful insights.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-light fa-building-columns"></i>
+            <h2>Banking Knowledge</h2>
+            <ul>
+                <li><span>Through this project, I have gained a deeper understanding of the credit assessment processes and challenges faced by banks. 
+                    This experience has provided me with valuable insights into the banking industry.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>

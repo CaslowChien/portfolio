@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>E-scooter Market Sentiment Analysis</title>
+    <link rel = "stylesheet" href = "style_DA.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="Index.html#header">Home</a></li>
+                <li><a href="Index.html#aboutMe">About</a></li>
+                <li><a href="Index.html#AI">Data Science Projects</a></li>
+                <li><a href="Index.html#DA">DA & Consulting Projects</a></li>
+                <li><a href="Index.html#interest_new">Interest</a></li>
+                <li><a href="Index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>E-scooter Market Sentiment Analysis</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation" align = 'justify'>
+                This is a project in collaboration between NTUDAC (National Taiwan University Data Analytics Club) and Gogoro (a Taiwanese electric scooter company). 
+                Its primary objective is to <span>assist Gogoro's management and marketing teams in gaining insights into the current market landscape by analyzing 
+                consumer feedback and attitudes towards Gogoro on the internet</span>. The findings will aid in making informed decisions for the next steps.
+            </p>
+        </div>
+        <div class="Information" style="margin-bottom: 80px;">
+            <div>
+                <h2>My Contribution</h2>
+                <br>
+                <br>
+                <ul>
+                    <li><span>Strategic brainstorming</span></li>
+                    <li><span>Responsible for web crawling tasks on Dcard and Ptt</span></li>
+                    <li><span>Utilizing OpenAI's ChatGPT to conduct sentiment analysis on public opinions (enabling ChatGPT to automatically convert online comments or posts into quantifiable scores)</span></li>
+                    <li><span>Creating the final dashboard presentation using tools of Python, Streamlit, HTML and CSS</span></li>.
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = "project_demonstration" style="background: #FAFAFA;">
+        <h1>Dashboard <br>Demonstration</h1>
+        <video  width="100%" height="600px" controls style="margin-bottom: 100px;">
+            <source src="DS/gogoro_dasboard.mp4" type="video/mp4">
+    </div>
+    <br>
+    <br>
+    <div class = "project_demonstration">
+        <h1>Final Presentation</h1>
+        <embed src="DS/Gogoro_Public Opinion Final Report.pdf" width="100%" height="600px"/>
+    </div>
+    <div class="reward" style="margin-top: 100px;">
+        <div>
+            <i class="fa-light fa-browsers"></i>
+            <h2>UI / UX</h2>
+            <ul>
+                <li><span>By continually modifying the content and format of the dashboard based on the owner's requirements, 
+                    I have become better equipped to design an app website from a user's perspective. </span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-light fa-head-side-gear"></i>
+            <h2>ML & AI</h2>
+            <ul>
+                <li><span>
+                    Through practical experience and application of ChatGPT, 
+                    I have learned about the potential of generative AI development and the fundamental methods of its practical utilization.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-list-check"></i>
+            <h2>Project Management</h2>
+            <ul>
+                <li><span>This project's significant complexity and diverse skillsets among team members, 
+                    coupled with time constraints, have taught me valuable lessons in efficient project management.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>

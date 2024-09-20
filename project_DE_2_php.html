@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Deloitte Consulting Project</title>
+    <link rel = "stylesheet" href = "deloitte.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="Index.html#header">Home</a></li>
+                <li><a href="Index.html#aboutMe">About</a></li>
+                <li><a href="Index.html#AI">Data Science Projects</a></li>
+                <li><a href="Index.html#DA">DA & Consulting Projects</a></li>
+                <li><a href="Index.html#interest_new">Interest</a></li>
+                <li><a href="Index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>Deloitte Consulting Project – Insurance / Reinsurance Annual Report</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation" align = 'justify'>
+                This was a project I worked on during my internship at Deloitte. Its primary goal was to help my team gain a better understanding of 
+                the overall framework used by foreign reinsurance and insurance companies when creating annual reports. The focus was primarily on disclosure 
+                methods related to <span>ESG, sustainability, company structure, and more. The intention was to assist colleagues in various initiatives, 
+                such as digital transformation projects and client acquisition, within the company</span>.
+            </p>
+        </div>
+        <div class="Information" style="margin-bottom: 80px;">
+            <div>
+                <h2>My Contribution</h2>
+                <br>
+                <br>
+                <ul>
+                    <li><span>Designed the overall presentation structure and handled graphic design</span></li>
+                    <li><span>Focused on researching business reports and sustainability reports for Swiss reinsurance companies</span></li>
+                    <li><span>Conducted research on company governance and sustainability for Zurich insurance companies</span></li>
+                    <li><span>The research I conducted on TCFD (Task Force on Climate-related Financial Disclosures) paved the way for my involvement in projects during my internship at IBM</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="navbar" style="background: #FAFAFA;">
+        <h1>Final <br>Presentation</h1>
+        <button class="navbutton active" onclick="showReport('swissre')">Swiss Re</button>
+        <button class="navbutton" onclick="showReport('zurich')">Zurich</button>
+    </div>
+    <div id="swissre_report" class="project_demonstration" style="background: #FAFAFA;">
+        <br>
+        <embed src="DA_pdf/Deloitte/Swiss Re Annual Report.pdf" width="100%" height="600px" style="margin-bottom: 100px;"/>
+    </div>
+    <div id="zurich_report" class="project_demonstration" style="background: #FAFAFA;">
+        <br>
+        <embed src="DA_pdf/Deloitte/Zurich Annual Report.pdf" width="100%" height="600px" style="margin-bottom: 100px;"/>
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-sharp fa-light fa-seedling"></i>
+            <h2>Sustainability Knowledge</h2>
+            <ul>
+                <li><span>This research broadened my understanding of sustainability in insurance, highlighting focus areas 
+                    beyond traditional ESG topics, such as social responsibilities and diversity.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-light fa-briefcase"></i>
+            <h2>Consulting Skills</h2>
+            <ul>
+                <li><span>This project has taught me how to understand client needs, communicate effectively 
+                    with colleagues, and structure compelling consulting presentations.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-regular fa-book-open-reader"></i>
+            <h2>Research Skills</h2>
+            <ul>
+                <li><span>In this project, I had to extensively read company annual reports, swiftly gather 
+                    essential information, and ultimately compile it into a clear and concise presentation.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+// Function to show the default report (Swiss Re) on page load
+function showDefaultReport() {
+  var defaultReport = document.getElementById("swissre_report");
+  if (defaultReport) {
+    defaultReport.style.display = "block";
+  }
+
+  // Add the active class to the default navbutton
+  var defaultNavButton = document.querySelector('[onclick="showReport(\'swissre\')"]');
+  if (defaultNavButton) {
+    defaultNavButton.classList.add("active");
+  }
+}
+
+function showReport(reportName) {
+  // Hide all report containers
+  var reportContainers = document.getElementsByClassName("project_demonstration");
+  for (var i = 0; i < reportContainers.length; i++) {
+    reportContainers[i].style.display = "none";
+  }
+
+  // Show the selected report container
+  var selectedReport = document.getElementById(reportName + "_report");
+  if (selectedReport) {
+    selectedReport.style.display = "block";
+  }
+
+  // Remove the active class from all navbuttons
+  var navButtons = document.getElementsByClassName("navbutton");
+  for (var i = 0; i < navButtons.length; i++) {
+    navButtons[i].classList.remove("active");
+  }
+
+  // Add the active class to the clicked navbutton
+  var clickedNavButton = document.querySelector('[onclick="showReport(\'' + reportName + '\')"]');
+  if (clickedNavButton) {
+    clickedNavButton.classList.add("active");
+  }
+}
+
+// Call the function to show the default report and add the active class on page load
+window.onload = function () {
+  showDefaultReport();
+};
+</script>
