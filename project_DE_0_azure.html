@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Caslow project</title>
+    <link rel = "stylesheet" href = "style_DAnDE.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#aboutMe">About</a></li>
+                <li><a href="index.html#AI">AI Projects</a></li>
+                <li><a href="index.html#DE">DE Projects</a></li>
+                <li><a href="index.html#DA">DA  Projects</a></li>
+                <li><a href="index.html#interest_new">Interest</a></li>
+                <li><a href="index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>AI Trend Forecaster: End-to-End ETL Pipeline with Azure</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation">
+                In this project, Our team developed a scalable data pipeline using Azure tools to predict AI trends by analyzing stock performance, Reddit activity, and Google Trends data. By training an LSTM-based model and integrating real-time data streams, we forecasted market sentiment and visualized insights through Power BI dashboards. This work bridges the gap between public sentiment, market trends, and AI advancements, providing stakeholders with actionable predictions and strategic insights.
+            </p>
+        </div>
+        <div class="Information" style = "margin-bottom: 80px;">
+            <div>
+                <h2>My Contribution</h2>
+                <br>
+                <br>
+                <ul>
+                    <li><span>esigned and implemented a streamlined data pipeline to process, clean, and analyze data using Azure tools.</span></li>
+                    <li><span>Built and trained an LSTM model with features such as early stopping and learning rate scheduling for time-series trend forecasting.</span></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = "project_demonstration" style="background: #FAFAFA;">
+        <h1>Final Presentation</h1>
+        <embed src="DS/DE Azure Presentation.mp4" width="100%" height="600px" style = "margin-bottom: 100px;"/>
+    </div>
+    <div class = "project_demonstration">
+        <h1>Final Report</h1>
+        <embed src="DS/DE Azure Report.pdf" width="100%" height="600px"/>
+    </div>
+    <div class = "project_demonstration">
+        <h1>Final Presentation Slides</h1>
+        <embed src="DS/DE Azure Presentation slides.pdf" width="100%" height="600px"/>
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-solid fa-timeline-arrow"></i>
+            <h2>Pipeline Development</h2>
+            <ul>
+                <li><span>I learned how to create an end-to-end pipeline, starting with data collection and cleaning, and ending with real-time visualization in Power BI.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-cloud-word"></i>
+            <h2>Azure Ecosystem Expertise</h2>
+            <ul>
+                <li><span>
+                    I gained hands-on experience with Azure tools like Data Factory, Event Hubs, and Databricks to process and analyze data efficiently.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-hexagon-nodes"></i>
+            <h2>Developing LSTM Models</h2>
+            <ul>
+                <li><span>
+                    I learned to design and train LSTM models for time-series forecasting, capturing complex patterns in stock and public sentiment data.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
