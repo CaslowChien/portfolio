@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <title>Caslow project</title>
+    <link rel = "stylesheet" href = "style_DAnDE.css"/>
+    <link rel="shortcut icon" type="x-icon" href="Subject_10.png">
+    <script src="https://kit.fontawesome.com/64437529a1.js" crossorigin="anonymous"></script>
+</head>
+<div id="header">
+    <div class="overall-menu">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="index.html#header">Home</a></li>
+                <li><a href="index.html#aboutMe">About</a></li>
+                <li><a href="index.html#AI">AI Projects</a></li>
+                <li><a href="index.html#DE">DE Projects</a></li>
+                <li><a href="index.html#DA">DA Projects</a></li>
+                <li><a href="index.html#interest_new">Interest</a></li>
+                <li><a href="index.html#contact_info">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>            
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header-text">
+            <h4>Edge-Optimized Model Fine-Tuning for Code Translation</h4>
+        </div>
+        <br>
+        <hr class = 'top-line'>
+        <br>
+        <div>
+            <p class= "explanation">
+                In this project, I fine-tuned a compact language model (Llama-3.2-3B) to translate Fortran code into Rust, enabling efficient deployment on edge devices. By leveraging GPT-4 insights and knowledge distillation, I reduced trainable parameters by 99.8% using LoRA adapters. The optimized model was deployed on Hugging Face, complete with a Gradio-powered web interface and API for seamless user interaction. This work demonstrates the potential of small language models for high-accuracy code translation in resource-constrained environments.
+                    <br>
+                    <a href="https://github.com/CodeTranslatorLLM/LinguistLLM/tree/main">Github Repo Link: github.com/CodeTranslatorLLM/LinguistLLM/tree/main</a>
+                    <br><br>
+            </p>
+        </div>
+        <div class="Information" style="margin-bottom: 80px;">
+            <div>
+                <h2>Project Results</h2>
+                <br>
+                <ul>
+                    <li><span>Reduced trainable parameters by 99.8% using LoRA-based fine-tuning of Llama-3.2-3B, enabling edge-device deployment for Fortran-to-Rust translation.</span></li>
+                    <li><span>Deployed the optimized model on Hugging Face with a Gradio-powered web interface and API for seamless user interaction.</span></li>
+                    <li><span>Demonstrated the potential of small language models to perform complex code translation tasks efficiently in resource-constrained environments.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="reward">
+        <div>
+            <i class="fa-light fa-head-side-gear"></i>
+            <h2>Model Fine-Tuning</h2>
+            <ul>
+                <li><span>I gained expertise in optimizing large language models by reducing their complexity and training them for specific tasks, improving efficiency and performance on edge devices.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-microchip-ai"></i>
+            <h2>Knowledge Distillation</h2>
+            <ul>
+                <li><span>This project taught me how to transfer knowledge from a large, powerful model (GPT-4) to a smaller, more efficient model (Llama-3.2-3B), maintaining accuracy while reducing computational requirements.</span></li>
+            </ul>
+        </div>
+        <div>
+            <i class="fa-solid fa-list-check"></i>
+            <h2>Deployment and API Integration</h2>
+            <ul>
+                <li><span>I learned how to deploy machine learning models on platforms like Hugging Face and integrate them with user-friendly interfaces and APIs, making them accessible for real-world applications.</span></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr class = 'bottom_line'>
+    <div class="copyright">
+        <p>Copyright © Vanessa Huang, modified by Caslow Chien, 2024.</p>
+    </div>  
+</div>  
+<!-- -----JavaScript---------------------------------------------------------------------------- -->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-content");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link"); 
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //event.currentTarget = the element that triggered the event
+        document.getElementById(tabname).classList.add("active-tab"); //document.getElementById(tabname) = the element with the id attribute with the specified value
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
