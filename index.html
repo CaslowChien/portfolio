@@ -1505,7 +1505,7 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/caslow/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/CaslowChien" target="_blank">GitHub</a>
-                <a href="/cdn-cgi/l/email-protection#d3b0b2a0bfbca4b0bbbab6bd93b4beb2babffdb0bcbe">Email</a>
+                <a href="mailto:caslowchien@gmail.com">Email</a>
             </div>
             <div class="scroll-hint"> </div>
         </footer>
@@ -1532,11 +1532,11 @@
         <div class="contact-content">
             <h2>Say hi!</h2>
             <p>If you’d like to discuss opportunities, collaborations, or have any questions, please feel free to reach out.</p>
-            <a href="/cdn-cgi/l/email-protection#dfbcbeacb3b0a8bcb7b6bab19fb8b2beb6b3f1bcb0b2" class="contact-email">
+            <a href="mailto:caslowchien@gmail.com" class="contact-email">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span class="__cf_email__" data-cfemail="e4878597888b93878c8d818aa48389858d88ca878b89">[email&#160;protected]</span>
+                caslowchien@gmail.com
             </a>
         </div>
     </section>
@@ -1693,7 +1693,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Smooth scrolling for nav links (laptop view)
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -2174,6 +2174,9 @@
                     
                     blogModalTitle.textContent = blog.title;
                     blogModalMeta.innerHTML = `
+                        ${blog.tag ? `<span class="blog-card-tag">${blog.tag}</span>` : ''}
+                        ${blog.date ? `<span class="blog-card-date">${blog.date}</span>` : ''}
+                        ${blog.link ? `<a href="${blog.link}" target="_blank" class="blog-card-link">
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
