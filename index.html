@@ -205,12 +205,26 @@
             letter-spacing: 1px;
         }
 
+        /* Mobile header icons - fixed position */
         @media (max-width: 768px) {
             .work-experience-grid {
                 grid-template-columns: 1fr;
             }
             .header-icons {
-                display: none;
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 100;
+                background: rgba(26, 26, 46, 0.9);
+                padding: 0.5rem 0.75rem;
+                border-radius: 20px;
+                border: 1px solid rgba(195, 173, 208, 0.2);
+                backdrop-filter: blur(10px);
+                gap: 0.75rem;
+            }
+            .header-icons svg {
+                width: 18px;
+                height: 18px;
             }
         }
 
@@ -381,6 +395,13 @@
             .projects-container:hover .project-card {
                 flex: 0.3;
                 min-width: 40px;
+            }
+            
+            /* Adjacent cards get partial expansion */
+            .projects-container:hover .project-card.adjacent {
+                flex: 1.5;
+                min-width: 80px;
+                opacity: 0.9;
             }
         
             .projects-container:hover .project-card:hover {
@@ -1674,6 +1695,54 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // Smooth scrolling for nav links (laptop view)
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Adjacent card expansion logic for project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectsContainer = document.querySelector('.projects-container');
+
+        projectCards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                // Only apply on desktop
+                if (window.innerWidth > 480) {
+                    // Remove adjacent class from all cards first
+                    projectCards.forEach(c => c.classList.remove('adjacent'));
+                    
+                    // Add adjacent class to neighboring cards
+                    if (index > 0) {
+                        projectCards[index - 1].classList.add('adjacent');
+                    }
+                    if (index < projectCards.length - 1) {
+                        projectCards[index + 1].classList.add('adjacent');
+                    }
+                }
+            });
+        });
+
+        // Remove adjacent classes when mouse leaves the container
+        if (projectsContainer) {
+            projectsContainer.addEventListener('mouseleave', () => {
+                projectCards.forEach(c => c.classList.remove('adjacent'));
+            });
+        }
+
         const projectsData = {
             1: {
                 number: "01",
@@ -2108,7 +2177,7 @@
                         ${blog.tag ? `<span class="blog-card-tag">${blog.tag}</span>` : ''}
                         ${blog.date ? `<span class="blog-card-date">${blog.date}</span>` : ''}
                         ${blog.link ? `<a href="${blog.link}" target="_blank" class="blog-card-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             Visit Link
