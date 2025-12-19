@@ -1484,7 +1484,7 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/caslow/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/CaslowChien" target="_blank">GitHub</a>
-                <a href="/cdn-cgi/l/email-protection#04676577686b73676c6d616a446369656d682a676b69">Email</a>
+                <a href="mailto:caslowchien@gmail.com">Email</a>
             </div>
             <div class="scroll-hint"> </div>
         </footer>
@@ -1511,11 +1511,11 @@
         <div class="contact-content">
             <h2>Say hi!</h2>
             <p>If you’d like to discuss opportunities, collaborations, or have any questions, please feel free to reach out.</p>
-            <a href="/cdn-cgi/l/email-protection#ee8d8f9d8281998d86878b80ae89838f8782c08d8183" class="contact-email">
+            <a href="mailto:caslowchien@gmail.com" class="contact-email">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span class="__cf_email__" data-cfemail="ddbebcaeb1b2aabeb5b4b8b39dbab0bcb4b1f3beb2b0">[email&#160;protected]</span>
+                caslowchien@gmail.com
             </a>
         </div>
     </section>
@@ -1672,7 +1672,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const projectsData = {
             1: {
@@ -2199,3 +2199,16 @@
                 const loadedBlogs = await Promise.all(blogPromises);
                 blogsData = loadedBlogs.filter(blog => blog !== null);
                 renderFilterButtons();
+                renderBlogCards();
+                
+            } catch (error) {
+                console.log('Could not load blogs:', error.message);
+                renderBlogCards();
+            }
+        }
+
+        // Initialize blogs on page load
+        loadBlogs();
+    </script>
+</body>
+</html>
