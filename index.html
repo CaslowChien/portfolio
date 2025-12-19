@@ -1972,6 +1972,41 @@
         function parseMarkdown(md) {
             let html = md;
             
+            // Tables (must be processed before other transformations)
+            html = html.replace(/^(\|.+\|)\n(\|[-:\s|]+\|)\n((?:\|.+\|\n?)+)/gim, function(match, headerRow, separatorRow, bodyRows) {
+                // Parse alignment from separator row
+                const alignments = separatorRow.split('|').slice(1, -1).map(cell => {
+                    cell = cell.trim();
+                    if (cell.startsWith(':') && cell.endsWith(':')) return 'center';
+                    if (cell.endsWith(':')) return 'right';
+                    return 'left';
+                });
+                
+                // Parse header cells
+                const headerCells = headerRow.split('|').slice(1, -1);
+                let tableHtml = '<table><thead><tr>';
+                headerCells.forEach((cell, i) => {
+                    const align = alignments[i] ? ` style="text-align:${alignments[i]}"` : '';
+                    tableHtml += `<th${align}>${cell.trim()}</th>`;
+                });
+                tableHtml += '</tr></thead><tbody>';
+                
+                // Parse body rows
+                const rows = bodyRows.trim().split('\n');
+                rows.forEach(row => {
+                    const cells = row.split('|').slice(1, -1);
+                    tableHtml += '<tr>';
+                    cells.forEach((cell, i) => {
+                        const align = alignments[i] ? ` style="text-align:${alignments[i]}"` : '';
+                        tableHtml += `<td${align}>${cell.trim()}</td>`;
+                    });
+                    tableHtml += '</tr>';
+                });
+                tableHtml += '</tbody></table>';
+                
+                return tableHtml;
+            });
+            
             // Headers
             html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
             html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
@@ -2014,6 +2049,8 @@
             html = html.replace(/(<\/blockquote>)<\/p>/g, '$1');
             html = html.replace(/<p>(<pre>)/g, '$1');
             html = html.replace(/(<\/pre>)<\/p>/g, '$1');
+            html = html.replace(/<p>(<table>)/g, '$1');
+            html = html.replace(/(<\/table>)<\/p>/g, '$1');
             
             return html;
         }
