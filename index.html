@@ -89,7 +89,6 @@
             transition: all 0.3s ease;
             position: relative;
             cursor: pointer;
-            z-index: 10;
         }
 
         nav a::after {
@@ -1676,23 +1675,15 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Smooth scrolling for nav links (laptop view)
-        document.addEventListener('click', function(e) {
-            const anchor = e.target.closest('nav a[href^="#"]');
-            if (!anchor) return;
-            
-            e.preventDefault();
-            const targetId = anchor.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const headerOffset = 80;
-                const targetPosition = targetElement.offsetTop - headerOffset;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        console.log('Nav links found:', navLinks.length);
+        
+        navLinks.forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault();
+                console.log('Link clicked!');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            };
         });
         
         // Adjacent card expansion logic for project cards
