@@ -221,12 +221,6 @@
                 border: 1px solid rgba(195, 173, 208, 0.2);
                 backdrop-filter: blur(10px);
                 gap: 0.75rem;
-                transition: opacity 0.3s ease, transform 0.3s ease;
-            }
-            .header-icons.hidden {
-                opacity: 0;
-                transform: translateY(-20px);
-                pointer-events: none;
             }
             .header-icons svg {
                 width: 18px;
@@ -1406,7 +1400,7 @@
                         <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
-                <a href="/cdn-cgi/l/email-protection#395a584a55564e795b4c175c5d4c" title="Email">
+                <a href="mailto:caslow@bu.edu" title="Email">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
@@ -1511,7 +1505,7 @@
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/caslow/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/CaslowChien" target="_blank">GitHub</a>
-                <a href="/cdn-cgi/l/email-protection#4e2d2f3d2221392d26272b200e29232f2722602d2123">Email</a>
+                <a href="mailto:caslowchien@gmail.com">Email</a>
             </div>
             <div class="scroll-hint"> </div>
         </footer>
@@ -1538,11 +1532,11 @@
         <div class="contact-content">
             <h2>Say hi!</h2>
             <p>If you’d like to discuss opportunities, collaborations, or have any questions, please feel free to reach out.</p>
-            <a href="/cdn-cgi/l/email-protection#395a584a55564e5a51505c57795e54585055175a5654" class="contact-email">
+            <a href="mailto:caslowchien@gmail.com" class="contact-email">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <span class="__cf_email__" data-cfemail="214240524d4e56424948444f61464c40484d0f424e4c">[email&#160;protected]</span>
+                caslowchien@gmail.com
             </a>
         </div>
     </section>
@@ -1694,7 +1688,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Smooth scrolling for nav links (laptop view)
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -1844,76 +1838,6 @@
 
         // Check if mobile device
         const isMobile = window.matchMedia('(max-width: 480px)').matches || 'ontouchstart' in window;
-
-        // Mobile: Hide header icons on scroll down, show on scroll up
-        (function() {
-            const headerIcons = document.querySelector('.header-icons');
-            let lastScrollY = window.scrollY;
-            let ticking = false;
-
-            function updateHeaderIcons() {
-                const currentScrollY = window.scrollY;
-                
-                // Only apply on mobile (max-width: 768px)
-                if (window.innerWidth <= 768) {
-                    if (currentScrollY > lastScrollY && currentScrollY > 50) {
-                        // Scrolling down & past threshold
-                        headerIcons.classList.add('hidden');
-                    } else {
-                        // Scrolling up or at top
-                        headerIcons.classList.remove('hidden');
-                    }
-                } else {
-                    // On desktop, always show
-                    headerIcons.classList.remove('hidden');
-                }
-                
-                lastScrollY = currentScrollY;
-                ticking = false;
-            }
-
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateHeaderIcons);
-                    ticking = true;
-                }
-            });
-
-            // Also update on resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    headerIcons.classList.remove('hidden');
-                }
-            });
-        })();
-
-        // Smooth scroll navigation for nav links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Also handle logo click to scroll to home
-        document.querySelector('.logo').addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetElement = document.querySelector('#home');
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
 
         document.querySelectorAll('.project-card').forEach(card => {
             card.addEventListener('click', (e) => {
@@ -2338,3 +2262,17 @@
                 
                 const loadedBlogs = await Promise.all(blogPromises);
                 blogsData = loadedBlogs.filter(blog => blog !== null);
+                renderFilterButtons();
+                renderBlogCards();
+                
+            } catch (error) {
+                console.log('Could not load blogs:', error.message);
+                renderBlogCards();
+            }
+        }
+
+        // Initialize blogs on page load
+        loadBlogs();
+    </script>
+</body>
+</html>
