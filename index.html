@@ -1681,6 +1681,34 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        // Adjacent card expansion logic for project cards
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectsContainer = document.querySelector('.projects-container');
+
+        projectCards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                // Only apply on desktop
+                if (window.innerWidth > 480) {
+                    // Remove adjacent class from all cards first
+                    projectCards.forEach(c => c.classList.remove('adjacent'));
+                    
+                    // Add adjacent class to neighboring cards
+                    if (index > 0) {
+                        projectCards[index - 1].classList.add('adjacent');
+                    }
+                    if (index < projectCards.length - 1) {
+                        projectCards[index + 1].classList.add('adjacent');
+                    }
+                }
+            });
+        });
+
+        // Remove adjacent classes when mouse leaves the container
+        if (projectsContainer) {
+            projectsContainer.addEventListener('mouseleave', () => {
+                projectCards.forEach(c => c.classList.remove('adjacent'));
+            });
+        }
         const projectsData = {
             1: {
                 number: "01",
