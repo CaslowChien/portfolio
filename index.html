@@ -1477,6 +1477,33 @@
             width: 14px;
             height: 14px;
         }
+
+        .book-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .book-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(195, 173, 208, 0.1);
+            font-size: 0.85rem;
+            color: rgba(250, 249, 251, 0.7);
+        }
+        
+        .book-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .book-title {
+            color: var(--light);
+            font-weight: 500;
+        }
+        
+        .book-author {
+            color: rgba(250, 249, 251, 0.5);
+            font-size: 0.8rem;
+        }
         
         /* Responsive for Interests */
         @media (max-width: 1024px) {
@@ -1805,14 +1832,14 @@
                 <div class="interest-card">
                     <div class="interest-icon">📚</div>
                     <div class="interest-title">Reading</div>
-                    <div class="interest-subtitle">Books that inspired my 20s</div>
+                    <div class="interest-subtitle">Books that inspired my 20s -</div>
                     <div class="interest-content">
-                        <ul>
-                            <li>Show Your Work! — Austin Kleon</li>
-                            <li>Why is the Dollar Shrinking? — Irving Fisher</li>
-                            <li>Pleased to Meet Me — Bill Sullivan</li>
-                            <li>Escape from Freedom — Erich Fromm</li>
-                            <li>The Myth of Sisyphus — Albert Camus</li>
+                        <ul class="book-list">
+                            <li><span class="book-title">Show Your Work!</span> <span class="book-author">— Austin Kleon</span></li>
+                            <li><span class="book-title">Why is the Dollar Shrinking?</span> <span class="book-author">— Irving Fisher</span></li>
+                            <li><span class="book-title">Pleased to Meet Me</span> <span class="book-author">— Bill Sullivan</span></li>
+                            <li><span class="book-title">Escape from Freedom</span> <span class="book-author">— Erich Fromm</span></li>
+                            <li><span class="book-title">The Myth of Sisyphus</span> <span class="book-author">— Albert Camus</span></li>
                         </ul>
                     </div>
                 </div>
@@ -1821,15 +1848,7 @@
                 <div class="interest-card">
                     <div class="interest-icon">🎵</div>
                     <div class="interest-title">Music</div>
-                    <div class="interest-subtitle">Creating & Performing</div>
-                    <div class="interest-content">
-                        <ul>
-                            <li>Guitar</li>
-                            <li>Piano</li>
-                            <li>Remixing</li>
-                            <li>Singing</li>
-                        </ul>
-                    </div>
+                    <div class="interest-subtitle">Guitar · Piano · Remixing · Singing</div>
                 </div>
             </div>
         </div>
