@@ -18,7 +18,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         html, body { height: 100%; overflow-x: hidden; }
 
         body {
@@ -133,12 +132,12 @@
             margin-bottom: 3rem;
         }
 
-        .work-experience-header {
+        .experience-header {
             text-align: center;
             margin-bottom: 2rem;
         }
 
-        .work-experience-header h3 {
+        .experience-header h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
             font-weight: 600;
@@ -205,26 +204,9 @@
             letter-spacing: 1px;
         }
 
-        /* Mobile header icons - fixed position */
         @media (max-width: 768px) {
             .work-experience-grid {
                 grid-template-columns: 1fr;
-            }
-            .header-icons {
-                position: fixed;
-                top: 1rem;
-                right: 1rem;
-                z-index: 100;
-                background: rgba(26, 26, 46, 0.9);
-                padding: 0.5rem 0.75rem;
-                border-radius: 20px;
-                border: 1px solid rgba(195, 173, 208, 0.2);
-                backdrop-filter: blur(10px);
-                gap: 0.75rem;
-            }
-            .header-icons svg {
-                width: 18px;
-                height: 18px;
             }
         }
 
@@ -393,10 +375,10 @@
 
         @media (min-width: 481px) {
             .projects-container:hover .project-card {
-                flex: 0.3;
-                min-width: 40px;
+                flex: 0.1;
+                min-width: 15px;
             }
-            
+
             /* Adjacent cards get partial expansion */
             .projects-container:hover .project-card.adjacent {
                 flex: 1.5;
@@ -405,9 +387,9 @@
             }
         
             .projects-container:hover .project-card:hover {
-                flex: 6;
+                flex: 7;
                 max-width: none;
-                min-width: 400px;
+                min-width: 450px;
                 border-color: var(--primary);
                 box-shadow: 0 0 40px var(--primary-glow), 0 0 80px rgba(153, 198, 189, 0.1), inset 0 0 30px rgba(195, 173, 208, 0.05);
             }
@@ -1550,7 +1532,7 @@
 
         <!-- Working Experience Section -->
         <div class="work-experience-section">
-            <div class="work-experience-header">
+            <div class="experience-header">
                 <h3>Working Experience</h3>
             </div>
             <div class="work-experience-grid">
@@ -1568,15 +1550,6 @@
                     <div class="work-info">
                         <div class="work-title">Data Science Technical Project Manager</div>
                         <div class="work-company">BU Spark!</div>
-                        <div class="work-date">Jan 2025 - Dec 2025</div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQFHtTwDewbajA/company-logo_200_200/company-logo_200_200/0/1630611022236/bucds_logo?e=1767830400&v=beta&t=uNiKzm69pzE8Wct0YpdUju69mkJ9k5T0dGHHxjId6aM" alt="BU CDS Logo" class="work-logo">
-                    <div class="work-info">
-                        <div class="work-title">Graduate Student Assistant</div>
-                        <div class="work-company">Faculty of Computing & Data Sciences at Boston University</div>
                         <div class="work-date">Jan 2025 - Dec 2025</div>
                     </div>
                 </div>
@@ -1618,6 +1591,9 @@
                 </div>
             </div>
         </div>
+        <div class="experience-header">
+                <h3>Journey</h3>
+            </div>
 
         <div class="about-content">
             <div class="map-container">
@@ -1696,24 +1672,17 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         // Smooth scrolling for nav links (laptop view)
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        console.log('Nav links found:', navLinks.length);
+        
+        navLinks.forEach(link => {
+            link.onclick = function(e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
+                console.log('Link clicked!');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            };
         });
-
+        
         // Adjacent card expansion logic for project cards
         const projectCards = document.querySelectorAll('.project-card');
         const projectsContainer = document.querySelector('.projects-container');
@@ -1742,7 +1711,6 @@
                 projectCards.forEach(c => c.classList.remove('adjacent'));
             });
         }
-
         const projectsData = {
             1: {
                 number: "01",
@@ -2004,6 +1972,41 @@
         function parseMarkdown(md) {
             let html = md;
             
+            // Tables (must be processed before other transformations)
+            html = html.replace(/^(\|.+\|)\n(\|[-:\s|]+\|)\n((?:\|.+\|\n?)+)/gim, function(match, headerRow, separatorRow, bodyRows) {
+                // Parse alignment from separator row
+                const alignments = separatorRow.split('|').slice(1, -1).map(cell => {
+                    cell = cell.trim();
+                    if (cell.startsWith(':') && cell.endsWith(':')) return 'center';
+                    if (cell.endsWith(':')) return 'right';
+                    return 'left';
+                });
+                
+                // Parse header cells
+                const headerCells = headerRow.split('|').slice(1, -1);
+                let tableHtml = '<table><thead><tr>';
+                headerCells.forEach((cell, i) => {
+                    const align = alignments[i] ? ` style="text-align:${alignments[i]}"` : '';
+                    tableHtml += `<th${align}>${cell.trim()}</th>`;
+                });
+                tableHtml += '</tr></thead><tbody>';
+                
+                // Parse body rows
+                const rows = bodyRows.trim().split('\n');
+                rows.forEach(row => {
+                    const cells = row.split('|').slice(1, -1);
+                    tableHtml += '<tr>';
+                    cells.forEach((cell, i) => {
+                        const align = alignments[i] ? ` style="text-align:${alignments[i]}"` : '';
+                        tableHtml += `<td${align}>${cell.trim()}</td>`;
+                    });
+                    tableHtml += '</tr>';
+                });
+                tableHtml += '</tbody></table>';
+                
+                return tableHtml;
+            });
+            
             // Headers
             html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
             html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
@@ -2046,6 +2049,8 @@
             html = html.replace(/(<\/blockquote>)<\/p>/g, '$1');
             html = html.replace(/<p>(<pre>)/g, '$1');
             html = html.replace(/(<\/pre>)<\/p>/g, '$1');
+            html = html.replace(/<p>(<table>)/g, '$1');
+            html = html.replace(/(<\/table>)<\/p>/g, '$1');
             
             return html;
         }
@@ -2177,7 +2182,7 @@
                         ${blog.tag ? `<span class="blog-card-tag">${blog.tag}</span>` : ''}
                         ${blog.date ? `<span class="blog-card-date">${blog.date}</span>` : ''}
                         ${blog.link ? `<a href="${blog.link}" target="_blank" class="blog-card-link">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
                             Visit Link
