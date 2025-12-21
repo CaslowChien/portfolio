@@ -1397,6 +1397,13 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 30px var(--primary-glow);
         }
+
+        .interest-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
         
         .interest-icon {
             width: 48px;
@@ -1407,22 +1414,20 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            margin-bottom: 1rem;
             flex-shrink: 0;
         }
         
         .interest-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             color: var(--light);
-            margin-bottom: 0.75rem;
         }
         
         .interest-subtitle {
             font-size: 0.85rem;
-            color: var(--secondary);
-            margin-bottom: 0.75rem;
+            color: rgba(250, 249, 251, 0.6);
+            margin-top: 0.25rem;
         }
         
         .interest-content {
@@ -1814,9 +1819,13 @@
             <div class="interests-grid">
                 <!-- Dancing Card -->
                 <div class="interest-card">
-                    <div class="interest-icon">💃</div>
-                    <div class="interest-title">Dancing</div>
-                    <div class="interest-subtitle">Street Dance · Hiphop · Contemporary</div>
+                    <div class="interest-card-header">
+                        <div class="interest-icon">💃</div>
+                        <div>
+                            <div class="interest-title">Dancing</div>
+                            <div class="interest-subtitle">Street Dance · Hiphop · Contemporary</div>
+                        </div>
+                    </div>
                     <div class="interest-content">
                         <p>President of Pop Dance Club 2020-2021 @ National Taiwan University</p>
                     </div>
@@ -1830,9 +1839,13 @@
         
                 <!-- Reading Card -->
                 <div class="interest-card">
-                    <div class="interest-icon">📚</div>
-                    <div class="interest-title">Reading</div>
-                    <div class="interest-subtitle">Books that inspired my 20s -</div>
+                    <div class="interest-card-header">
+                        <div class="interest-icon">📚</div>
+                        <div>
+                            <div class="interest-title">Reading</div>
+                            <div class="interest-subtitle">Psychology · Philosophy · Fiction · Science</div>
+                        </div>
+                    </div>
                     <div class="interest-content">
                         <ul class="book-list">
                             <li><span class="book-title">Show Your Work!</span> <span class="book-author">— Austin Kleon</span></li>
@@ -1845,9 +1858,13 @@
         
                 <!-- Music Card -->
                 <div class="interest-card">
-                    <div class="interest-icon">🎵</div>
-                    <div class="interest-title">Music</div>
-                    <div class="interest-subtitle">Guitar · Piano · Remixing · Singing</div>
+                    <div class="interest-card-header">
+                        <div class="interest-icon">🎵</div>
+                        <div>
+                            <div class="interest-title">Music</div>
+                            <div class="interest-subtitle">Guitar · Piano · Remixing · Singing</div>
+                        </div>
+                    </div>
                     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2mYubqM2aaDNwYw5u6oDDU?utm_source=generator&theme=0" width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
             </div>
